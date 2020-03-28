@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Vue-demo0328</title>
+</head>
+<body>
+	<div id="s1">
+		<child>
+			<p>奥赛灵法塞拉</p>
+		</child>
+	</div>
+
+	<div id="s2">
+		<child>
+		</child>
+	</div>
+
+	<div id="s3">
+		<name-component>
+			<h3 slot="header">我是标题</h3>	
+			<p>我是第一段</p>
+			<p>我是第二段</p>
+			<p slot="footer">我是底部信息</p>
+		</name-component>	
+	</div>
+	<hr>
+
+	<div id="s4">
+		<child>
+			<template slot="abc" slot-scope="prop">
+				{{prop.text}}
+			</template>
+		</child>
+	</div>
+	<hr>
+
+	<div id="s5">
+		<child>
+			<!-- <template slot="slotName" slot-scope="key">
+				{{key.text}}<br>
+				{{key.xxx}}
+			</template>-->
+			<p slot="slotName" slot-scope="prop">
+				{{prop.text}}	
+				{{prop.xxx}}
+			</p>
+		</child>
+	</div>
+	<hr>
+
+	<div id="s6">
+		<child>
+			<h1 slot="header">我是标题s6</h1>
+			<p>一个P标签</p>
+			<p>两个P标签</p>
+			<div class="footer" slot="footer">Footer</div>
+		</child>
+	</div>
+
+	<div id="s7">
+		<component :is="thisView"></component>	
+		<button @click="handleView('A')">一</button>
+		<button @click="handleView('B')">二</button>
+		<button @click="handleView('C')">三</button>
+		<button @click="handleView('D')">四</button>
+	</div>
+	<hr>
+
+	<div id="s8">
+		<component :is="thisView"></component>
+		<button @click="handleView('A')">一</button>
+		<button @click="handleView('B')">二</button>
+		<button @click="handleView('C')">三</button>
+		<button @click="handleView('D')">四</button>
+	</div>
+
+
+
+
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="/main.1f19ae8e.js"></script>
+</body>
+</html>
